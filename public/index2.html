@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Hairstyle Generator v2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Hairstyle Generator v2</h1>
+        
+        <div class="nav-links">
+            <a href="/" class="nav-link">Back to Hairstyle Transformation</a>
+        </div>
+        
+        <div class="image-upload-container">
+            <div class="upload-box" id="userImageBox">
+                <div class="drop-zone" id="userImageDropZone">
+                    <img id="userImagePreview" class="image-preview" style="display: none;">
+                    <div class="upload-prompt">
+                        <span class="drop-text">Drop your photo here</span>
+                        <span class="or-text">or</span>
+                        <input type="file" id="userImageInput" accept="image/*" class="file-input">
+                        <label for="userImageInput" class="upload-button">Choose File</label>
+                    </div>
+                </div>
+                <p class="upload-label">Your Photo</p>
+            </div>
+        </div>
+
+        <div class="prompt-container">
+            <label for="textPrompt">Hairstyle Description:</label>
+            
+            <div class="gender-toggle">
+                <button class="gender-btn" data-gender="women">Women's Styles</button>
+                <button class="gender-btn active" data-gender="men">Men's Styles</button>
+            </div>
+
+            <div class="style-presets women-styles" style="display: none;">
+                <h3>Women's Quick Select Styles:</h3>
+                <div class="style-options">
+                    <button class="style-option" data-style="Long wavy blonde hair with bangs">Long Blonde Waves</button>
+                    <button class="style-option" data-style="Short pixie cut with platinum blonde color">Pixie Cut</button>
+                    <button class="style-option" data-style="Medium length bob with auburn highlights">Auburn Bob</button>
+                    <button class="style-option" data-style="Curly dark hair with layers">Curly Layers</button>
+                    <button class="style-option" data-style="Straight black hair with side bangs">Straight Black</button>
+                    <button class="style-option" data-style="Short spiky hair with blue highlights">Blue Spikes</button>
+                    <button class="style-option" data-style="Long braided hairstyle with natural color">Long Braids</button>
+                    <button class="style-option" data-style="Shoulder length layered hair with caramel highlights">Caramel Layers</button>
+                    <button class="style-option" data-style="Long wavy red hair with face-framing layers">Red Waves</button>
+                    <button class="style-option" data-style="Medium length wavy bob with ombre effect">Ombre Bob</button>
+                    <button class="style-option" data-style="Long straight hair with curtain bangs">Curtain Bangs</button>
+                    <button class="style-option" data-style="Short asymmetrical bob with purple highlights">Purple Bob</button>
+                    <button class="style-option" data-style="Long layered hair with balayage highlights">Balayage Layers</button>
+                    <button class="style-option" data-style="Short wavy bob with side part">Wavy Bob</button>
+                    <button class="style-option" data-style="Medium length shag haircut with curtain bangs">Modern Shag</button>
+                    <button class="style-option" data-style="Long beachy waves with blonde highlights">Beach Waves</button>
+                    <button class="style-option" data-style="Blunt bob with full bangs">Blunt Bob</button>
+                    <button class="style-option" data-style="Long straight layered hair with side swept bangs">Layered Straight</button>
+                    <button class="style-option" data-style="Pixie cut with long bangs and platinum blonde color">Long Pixie</button>
+                    <button class="style-option" data-style="Medium length hair with soft waves and honey highlights">Honey Waves</button>
+                    <button class="style-option" data-style="Long curly hair with burgundy color">Burgundy Curls</button>
+                    <button class="style-option" data-style="Short bob with blunt bangs and silver color">Silver Bob</button>
+                    <button class="style-option" data-style="Long layers with face framing and caramel highlights">Face Framing</button>
+                    <button class="style-option" data-style="Medium length lob with subtle waves">Wavy Lob</button>
+                    <button class="style-option" data-style="Short textured pixie with undercut">Undercut Pixie</button>
+                </div>
+            </div>
+
+            <div class="style-presets men-styles">
+                <h3>Men's Quick Select Styles:</h3>
+                <div class="style-options">
+                    <button class="style-option" data-style="Classic short fade haircut with clean sides">Classic Fade</button>
+                    <button class="style-option" data-style="Textured quiff with medium length on top">Textured Quiff</button>
+                    <button class="style-option" data-style="Slick back hairstyle with pomade">Slick Back</button>
+                    <button class="style-option" data-style="Messy textured crop with short sides">Messy Crop</button>
+                    <button class="style-option" data-style="Short buzz cut with faded sides">Buzz Cut</button>
+                    <button class="style-option" data-style="Medium length undercut with styled top">Undercut</button>
+                    <button class="style-option" data-style="Curly hair with medium length and natural texture">Curly Natural</button>
+                    <button class="style-option" data-style="Short pompadour with faded sides">Pompadour</button>
+                    <button class="style-option" data-style="High and tight military style haircut">High & Tight</button>
+                    <button class="style-option" data-style="Long top with disconnected undercut">Disconnected Undercut</button>
+                    <button class="style-option" data-style="Textured fringe with short back and sides">Textured Fringe</button>
+                    <button class="style-option" data-style="Classic crew cut with tapered sides">Crew Cut</button>
+                    <button class="style-option" data-style="Medium length comb over with side part">Comb Over</button>
+                    <button class="style-option" data-style="Short Caesar cut with textured top">Caesar Cut</button>
+                    <button class="style-option" data-style="Long top with slicked back sides">Slicked Back Long</button>
+                    <button class="style-option" data-style="Short textured crop with natural movement">Textured Crop</button>
+                    <button class="style-option" data-style="Medium length side swept with volume">Side Swept</button>
+                    <button class="style-option" data-style="Short spiky hair with gel">Spiky Style</button>
+                    <button class="style-option" data-style="Long top with messy texture and short sides">Messy Long Top</button>
+                    <button class="style-option" data-style="Classic side part with medium length">Side Part</button>
+                    <button class="style-option" data-style="Short textured fringe with natural look">Natural Fringe</button>
+                    <button class="style-option" data-style="Medium length quiff with volume">Volume Quiff</button>
+                    <button class="style-option" data-style="Short textured crop with messy top">Messy Crop</button>
+                    <button class="style-option" data-style="Long top with natural waves">Wavy Long Top</button>
+                    <button class="style-option" data-style="Short textured crop with side part">Textured Side Part</button>
+                    <button class="style-option" data-style="Medium length with natural texture">Natural Texture</button>
+                    <button class="style-option" data-style="Short crop with textured top">Textured Short</button>
+                    <button class="style-option" data-style="Long top with messy fringe">Messy Fringe</button>
+                    <button class="style-option" data-style="Short crop with natural movement">Natural Crop</button>
+                    <button class="style-option" data-style="Medium length with side swept fringe">Side Swept Fringe</button>
+                </div>
+            </div>
+
+            <textarea id="textPrompt" placeholder="Describe the hairstyle you want (e.g., 'classic short fade haircut with clean sides')"></textarea>
+        </div>
+
+        <button id="generateButton" class="transform-button" disabled>Generate Hairstyle</button>
+
+        <div id="resultContainer" class="result-container" style="display: none;">
+            <h2>Result</h2>
+            <img id="resultImage" class="result-image">
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+
+        <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+            <div class="spinner"></div>
+            <p>Generating your hairstyle...</p>
+        </div>
+    </div>
+    <script src="script2.js"></script>
+</body>
+</html> 

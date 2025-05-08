@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hairstyle Transformation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hairstyle Transformation</h1>
+        
+        <div class="nav-links">
+            <a href="/hairstyle-generator" class="nav-link">Try AI Hairstyle Generator</a>
+        </div>
+        
+        <div class="image-upload-container">
+            <div class="upload-box" id="userImageBox">
+                <div class="drop-zone" id="userImageDropZone">
+                    <img id="userImagePreview" class="image-preview" style="display: none;">
+                    <div class="upload-prompt">
+                        <span class="drop-text">Drop your photo here</span>
+                        <span class="or-text">or</span>
+                        <input type="file" id="userImageInput" accept="image/*" class="file-input">
+                        <label for="userImageInput" class="upload-button">Choose File</label>
+                    </div>
+                </div>
+                <p class="upload-label">Your Photo</p>
+            </div>
+
+            <div class="upload-box" id="templateImageBox">
+                <div class="drop-zone" id="templateImageDropZone">
+                    <img id="templateImagePreview" class="image-preview" style="display: none;">
+                    <div class="upload-prompt">
+                        <span class="drop-text">Drop hairstyle template here</span>
+                        <span class="or-text">or</span>
+                        <input type="file" id="templateImageInput" accept="image/*" class="file-input">
+                        <label for="templateImageInput" class="upload-button">Choose File</label>
+                    </div>
+                </div>
+                <p class="upload-label">Template Photo</p>
+            </div>
+        </div>
+
+        <button id="transformButton" class="transform-button" disabled>Transform Hairstyle</button>
+
+        <div id="resultContainer" class="result-container" style="display: none;">
+            <h2>Result</h2>
+            <img id="resultImage" class="result-image">
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+
+        <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+            <div class="spinner"></div>
+            <p>Transforming your hairstyle...</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
