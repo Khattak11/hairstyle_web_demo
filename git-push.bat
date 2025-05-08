@@ -48,7 +48,7 @@ git commit -m "Initial commit - AI Hairstyle Generator app with Vercel config"
 
 echo Setting up remote repository...
 git remote remove origin
-git remote add origin https://github.com/Khattak11/hairstyle_dummy_web.git
+git remote add origin https://github.com/Khattak11/hairstyle_web_demo.git
 
 echo Setting main branch...
 git branch -M main
@@ -57,7 +57,7 @@ echo Pushing to GitHub...
 git push -u origin main
 
 echo Done! Your code has been pushed to GitHub.
-echo Repository URL: https://github.com/Khattak11/hairstyle_dummy_web
+echo Repository URL: https://github.com/Khattak11/hairstyle_web_demo
 echo.
 echo To deploy on Vercel:
 echo 1. Go to https://vercel.com and create an account if you don't have one
